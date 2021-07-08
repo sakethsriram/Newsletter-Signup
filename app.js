@@ -33,12 +33,6 @@ app.post("/", function(req, res) {
     }
   };
   const jsonData = JSON.stringify(data);
-  // const url = "http://us6.api.mailchimp.com/3.0/lists/dcc74014f0";
-  // const options = {
-  //   method: "post",
-  //   auth: "1:614dddbe11aa7f29bc6923723e376f8a-us6"
-  // };
-
   async function run() {
     const response = await mailchimp.lists.addListMember("dcc74014f0", jsonData).then(
       function(responses) {
@@ -49,12 +43,6 @@ app.post("/", function(req, res) {
       });
   };
   run();
-  // response();
-  // api key
-  // 614dddbe11aa7f29bc6923723e376f8a-us6
-
-  // id
-  // dcc74014f0
 });
 app.listen(3000, function(req, res) {
   console.log("Server Started listening at port 3000");
